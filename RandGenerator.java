@@ -8,13 +8,14 @@ import java.io.FileNotFoundException;
 
 public class RandGenerator {
    public static void main(String[] args) throws FileNotFoundException {
-      String fileName = "superSerious.txt";
+      String fileName = args[0];
+      int Lines = Integer.parseInt(args[1]);
       DocReader doc = new DocReader(fileName);
       String finalText = "";
       Word y = doc.getRandomWord();
       
       //This is the full poem writing section
-      for (int i = 0; i < 16; i++) {
+      for (int i = 0; i < Lines; i++) {
          int j = 0;
          int x = 0;
          while (j < 11 && x < 7) {
